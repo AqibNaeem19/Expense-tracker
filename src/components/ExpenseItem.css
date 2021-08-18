@@ -8,6 +8,12 @@
     border-radius: 12px;
     background-color: #4b4b4b;
   }
+
+  .expense-item__date {
+    color: snow;
+    font-weight: 200;
+    font-size: .8em;
+  }
   
   .expense-item__description {
     display: flex;
