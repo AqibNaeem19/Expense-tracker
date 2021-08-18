@@ -4,15 +4,10 @@
     align-items: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     padding: 0.5rem;
-    margin: 1rem 0;
+    margin: 1rem auto;
+    width: 99%;
     border-radius: 12px;
     background-color: #4b4b4b;
-  }
-
-  .expense-item__date {
-    color: snow;
-    font-weight: 200;
-    font-size: .8em;
   }
   
   .expense-item__description {
@@ -44,6 +39,10 @@
   }
   
   @media screen and (min-width: 580px) {
+    .expense-item {
+      width: 60%;
+    }
+    
     .expense-item__description {
       flex-direction: row;
       align-items: center;
@@ -60,3 +59,14 @@
       padding: 0.5rem 1.5rem;
     }
   }
+
+
+
+
+
+
+
+
+
+
+  

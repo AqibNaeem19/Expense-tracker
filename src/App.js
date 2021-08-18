@@ -35,31 +35,32 @@ function App() {
       _id: generateRandomId(), 
       expenseItemPrice: 67.8, 
       expenseItemName: 'Toilet Paper', 
-      itemPurchaseDate: new Date().toDateString() 
+      itemPurchaseDate: new Date() 
     },
     { 
       _id: generateRandomId(), 
       expenseItemPrice: 15.77, 
       expenseItemName: 'Skimmed Milk', 
-      itemPurchaseDate: new Date().toDateString() 
+      itemPurchaseDate: new Date() 
     },
     { 
       _id: generateRandomId(), 
       expenseItemPrice: 203.99, 
       expenseItemName: 'Groceries', 
-      itemPurchaseDate: new Date().toDateString() 
+      itemPurchaseDate: new Date()
     },
     { 
       _id: generateRandomId(), 
       expenseItemPrice: 500, 
       expenseItemName: 'Health Insuranse', 
-      itemPurchaseDate: new Date().toDateString() 
+      itemPurchaseDate: new Date()
     },
     { 
       _id: generateRandomId(), 
       expenseItemPrice: 55.06, 
       expenseItemName: 'Jogging Shoes', 
-      itemPurchaseDate: new Date().toDateString() }
+      itemPurchaseDate: new Date()
+    }
   ]
 
   // return all rendered ExpenseItems Components
@@ -75,12 +76,8 @@ function App() {
     )
   })
 
-
   return (
     <div className="App">
-      <h1>Hello from React Js</h1>
-      <p>I am the paragraph</p>
-      <hr />
       { passEachExpenseItemAsProp }
     </div>
   );
