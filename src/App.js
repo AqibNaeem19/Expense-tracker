@@ -1,4 +1,5 @@
-import ExpenseItem from './components/ExpenseItem';
+import ExpenseItem from './components/Expenses/ExpenseItem';
+import NewExpense from './components/NewExpense/NewExpense';
 
 // Array holds all the assigned ExpenseIds.
 let usedIds = [];
@@ -78,6 +79,7 @@ function App() {
 
   return (
     <div className="App">
+      <NewExpense />
       { passEachExpenseItemAsProp }
     </div>
   );
