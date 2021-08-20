@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../Styles/ExpenseForm.css';
 
-const ExpenseForm = () => {
+const ExpenseForm = ( props ) => {
   
   const initialState = {
     title: '',
@@ -23,6 +23,7 @@ const ExpenseForm = () => {
 
   const formSubmitHandler = event  => {
     event.preventDefault();
+    props.saveNewExpense(userInput);
     clearFormAfterSubmit();
   }
 

@@ -64,6 +64,13 @@ function App() {
     }
   ]
 
+  const addNewExpenseHandler = newExpensedData => {
+    const newExpense = {...newExpensedData,
+      _id: generateRandomId()
+    };
+    console.log(newExpense);
+  }
+
   // return all rendered ExpenseItems Components
   const passEachExpenseItemAsProp = ExpenseItems.map( item => {
     return (
@@ -79,7 +86,7 @@ function App() {
 
   return (
     <div className="App">
-      <NewExpense />
+      <NewExpense addNewExpense={addNewExpenseHandler} />
       { passEachExpenseItemAsProp }
     </div>
   );
