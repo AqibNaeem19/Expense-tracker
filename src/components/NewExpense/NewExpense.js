@@ -4,10 +4,8 @@ import '../Styles/NewExpense.css';
 
 const NewExpense = ( props ) => {
   const saveNewExpenseData = ( newExpenseData ) => {
-    const newExpense = {
-      ...newExpenseData
-    }
-    props.addNewExpense(newExpense);
+    // prop from Parent App.js 
+    props.addNewExpense(newExpenseData);
   }
 
   return (

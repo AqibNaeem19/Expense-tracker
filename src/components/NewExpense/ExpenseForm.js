@@ -3,28 +3,38 @@ import '../Styles/ExpenseForm.css';
 
 const ExpenseForm = ( props ) => {
   
-  const initialState = {
-    title: '',
-    price: '',
-    date: ''
+  // Expense States
+  const [expenseTitle, setExpenseTitle] = useState('');
+  const [expensePrice, setExpensePrice] = useState('');
+  const [expenseDate, setExpenseDate] = useState('');
+
+  // State Update Handlers
+  const expenseTitleHandler = event => {
+    setExpenseTitle(event.target.value);
   }
 
-  const [userInput, setUserInput] = useState(initialState);
-
-  const clearFormAfterSubmit = () => {
-    setUserInput({...initialState});
+  const expensePriceHandler = event => {
+    setExpensePrice(event.target.value);
   }
 
-  const expenseInputHandler = ( event ) => {
-    setUserInput({ ...userInput, 
-      [event.target.name]: event.target.value
-    });
+  const expenseDateHandler = event => {
+    setExpenseDate(event.target.value);
   }
 
+  // Submit Form
   const formSubmitHandler = event  => {
     event.preventDefault();
-    props.saveNewExpense(userInput);
-    clearFormAfterSubmit();
+    const newExpenseData = {
+      expenseItemName: expenseTitle,
+      expenseItemPrice: expensePrice,
+      itemPurchaseDate: new Date(expenseDate)
+    };
+    // Prop from Parent NewExpense.js
+    props.saveNewExpense(newExpenseData);
+    // Resetting Form Defaults
+    setExpenseTitle('');
+    setExpensePrice('');
+    setExpenseDate('');
   }
 
   return (
@@ -35,9 +45,9 @@ const ExpenseForm = ( props ) => {
           <label>Title</label>
           <input type='text' 
             name='title' 
-            value={userInput.title} 
+            value={expenseTitle} 
             placeholder='Tissue Box' 
-            onChange={ expenseInputHandler } 
+            onChange={ expenseTitleHandler } 
           />
         </div>
 
@@ -45,11 +55,11 @@ const ExpenseForm = ( props ) => {
           <label>Price</label>
           <input type='number' 
             name='price' 
-            value={userInput.price} 
+            value={expensePrice} 
             min='1' 
             step='1.0' 
             placeholder='5.0'
-            onChange={ expenseInputHandler } 
+            onChange={ expensePriceHandler } 
           />
         </div>
 
@@ -57,8 +67,8 @@ const ExpenseForm = ( props ) => {
           <label>Date</label>
           <input type='date' 
             name='date' 
-            value={userInput.date} 
-            onChange={ expenseInputHandler }  
+            value={expenseDate} 
+            onChange={ expenseDateHandler }  
           />
         </div>
 
