@@ -3,7 +3,6 @@ import '../Styles/ExpenseItem.css';
 
 export default function ExpenseItem(props) {
   return (
-    <div>
       <div className='expense-item'>
         <ExpenseDate date={props.purchasedDate} />
         <div className='expense-item__description'>
@@ -11,6 +10,5 @@ export default function ExpenseItem(props) {
           <div className='expense-item__price'>$ {props.price}</div>
         </div>
       </div>
-    </div>
   )
 }

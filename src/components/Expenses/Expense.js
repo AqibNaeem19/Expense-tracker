@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ExpenseItem from './ExpenseItem';
 import ExpenseFilter from './ExpenseFilter';
+import '../Styles/Expense.css';
 
 const Expense = (props) => {
   const [filterYear, setFilterYear] = useState('2020');
@@ -24,10 +25,10 @@ const Expense = (props) => {
   })
 
   return (
-    <React.Fragment>
+    <div className='expense'>
       <ExpenseFilter selected={filterYear} onChangeExpenseYear={expenseYearChangeHandler} />
       {renderExpenseList}
-    </React.Fragment>
+    </div>
   )
 }
 
