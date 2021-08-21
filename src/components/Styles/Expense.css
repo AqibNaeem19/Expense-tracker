@@ -7,3 +7,18 @@
     width: 50rem;
     max-width: 95%;
   }
+
+  .no-expense__paragraph{
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+    animation: no_expense 1s infinite;
+  }
+
+  @keyframes no_expense {
+    0%   {opacity: 0;}
+    25%  {opacity: 0.5;}
+    50%  {opacity: 1;}
+    75%  {opacity: 0.5;}
+    100% {opacity: 0;}
+  }

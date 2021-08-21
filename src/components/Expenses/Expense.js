@@ -12,22 +12,38 @@ const Expense = (props) => {
   }
 
   // return all rendered ExpenseItems Components
-  const renderExpenseList = props.expenseList.map(item => {
+  // const renderExpenseList = props.expenseList.map(item => {
+  //   return (
+  //     <ExpenseItem
+  //       key={item._id}
+  //       id={item._id}
+  //       price={item.expenseItemPrice}
+  //       name={item.expenseItemName}
+  //       purchasedDate={item.itemPurchaseDate}
+  //     />
+  //   )
+  // })
+
+  const filteredExpenses = props.expenseList.filter(expense => {
+    return expense.itemPurchaseDate.getFullYear().toString() === filterYear;
+  });
+
+  const renderExpenseList = filteredExpenses.map(item => {
     return (
-      <ExpenseItem
-        key={item._id}
-        id={item._id}
-        price={item.expenseItemPrice}
-        name={item.expenseItemName}
-        purchasedDate={item.itemPurchaseDate}
-      />
-    )
+          <ExpenseItem
+            key={item._id}
+            id={item._id}
+            price={item.expenseItemPrice}
+            name={item.expenseItemName}
+            purchasedDate={item.itemPurchaseDate}
+          />
+        )
   })
 
   return (
     <div className='expense'>
       <ExpenseFilter selected={filterYear} onChangeExpenseYear={expenseYearChangeHandler} />
-      {renderExpenseList}
+      {renderExpenseList.length === 0 ? <p className='no-expense__paragraph'>No Expense Found</p> : renderExpenseList}
     </div>
   )
 }

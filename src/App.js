@@ -9,7 +9,7 @@ const initialExpenseData = [
     _id: generateRandomId(), 
     expenseItemPrice: 67.8, 
     expenseItemName: 'Toilet Paper', 
-    itemPurchaseDate: new Date(2020, 6, 23)
+    itemPurchaseDate: new Date(2021, 6, 23)
   },
   { 
     _id: generateRandomId(), 
