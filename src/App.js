@@ -1,4 +1,4 @@
-import ExpenseItem from './components/Expenses/ExpenseItem';
+import Expense from './components/Expenses/Expense';
 import NewExpense from './components/NewExpense/NewExpense';
 
 // Array holds all the assigned ExpenseIds.
@@ -71,23 +71,10 @@ function App() {
     console.log(newExpense);
   }
 
-  // return all rendered ExpenseItems Components
-  const passEachExpenseItemAsProp = ExpenseItems.map( item => {
-    return (
-      <ExpenseItem 
-        key = {item._id}
-        id = {item._id} 
-        price = {item.expenseItemPrice} 
-        name = {item.expenseItemName} 
-        purchasedDate = {item.itemPurchaseDate} 
-      />
-    )
-  })
-
   return (
     <div className="App">
       <NewExpense addNewExpense={addNewExpenseHandler} />
-      { passEachExpenseItemAsProp }
+      <Expense expenseList={ExpenseItems}/>
     </div>
   );
 }
