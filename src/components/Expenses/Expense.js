@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ExpenseItem from './ExpenseItem';
+import ExpenseFilter from './ExpenseFilter';
 
 const Expense = (props) => {
+  const [filterYear, setFilterYear] = useState('2020');
+
+  // pass func to child and get value from dropdown.
+  const expenseYearChangeHandler = selectedYear => {
+    setFilterYear(selectedYear);
+  }
 
   // return all rendered ExpenseItems Components
   const renderExpenseList = props.expenseList.map(item => {
@@ -18,6 +25,7 @@ const Expense = (props) => {
 
   return (
     <React.Fragment>
+      <ExpenseFilter selected={filterYear} onChangeExpenseYear={expenseYearChangeHandler} />
       {renderExpenseList}
     </React.Fragment>
   )
