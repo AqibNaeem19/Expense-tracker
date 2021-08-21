@@ -11,19 +11,6 @@ const Expense = (props) => {
     setFilterYear(selectedYear);
   }
 
-  // return all rendered ExpenseItems Components
-  // const renderExpenseList = props.expenseList.map(item => {
-  //   return (
-  //     <ExpenseItem
-  //       key={item._id}
-  //       id={item._id}
-  //       price={item.expenseItemPrice}
-  //       name={item.expenseItemName}
-  //       purchasedDate={item.itemPurchaseDate}
-  //     />
-  //   )
-  // })
-
   const filteredExpenses = props.expenseList.filter(expense => {
     return expense.itemPurchaseDate.getFullYear().toString() === filterYear;
   });
