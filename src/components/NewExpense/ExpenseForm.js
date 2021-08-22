@@ -26,7 +26,7 @@ const ExpenseForm = ( props ) => {
     event.preventDefault();
     const newExpenseData = {
       expenseItemName: expenseTitle,
-      expenseItemPrice: expensePrice,
+      expenseItemPrice: +expensePrice,
       itemPurchaseDate: new Date(expenseDate)
     };
     // Prop from Parent NewExpense.js
