@@ -15,7 +15,7 @@ const Expense = (props) => {
   const filteredExpenses = props.expenseList.filter(expense => {
     return expense.itemPurchaseDate.getFullYear().toString() === filterYear;
   });
-
+  
   return (
     <div className='expense'>
       <ExpenseFilter selected={filterYear} onChangeExpenseYear={expenseYearChangeHandler} />
