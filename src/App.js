@@ -13,7 +13,7 @@ const initialExpenseData = [
   },
   { 
     _id: generateRandomId(), 
-    expenseItemPrice: 15.77, 
+    expenseItemPrice: 200, 
     expenseItemName: 'Skimmed Milk', 
     itemPurchaseDate: new Date(2021, 3, 12)
   },
@@ -31,7 +31,7 @@ const initialExpenseData = [
   },
   { 
     _id: generateRandomId(), 
-    expenseItemPrice: 55.06, 
+    expenseItemPrice: 150, 
     expenseItemName: 'Jogging Shoes', 
     itemPurchaseDate: new Date(2021, 10, 12)
   }
